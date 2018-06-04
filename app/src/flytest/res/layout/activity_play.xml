@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <LinearLayout
+        android:id="@+id/ac_play_ll01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#000"
+        android:gravity="center">
+
+        <com.longhorn.viewdvr.view.RtspVideoView
+            android:background="#000"
+            android:id="@+id/ac_play_flyvp01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="-146px"
+    android:layout_marginTop="-106px"
+    android:background="#000"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/file_pho_viewpager"
+        android:layout_width="788px"
+        android:layout_height="442px"
+        android:layout_marginLeft="318px"
+        android:layout_marginTop="133px" />
+
+    <Button
+        android:id="@+id/file_pho_return"
+        android:layout_width="98px"
+        android:layout_height="98px"
+        android:layout_marginLeft="290px"
+        android:layout_marginTop="598px"
+        android:background="@drawable/file_pho_return"
+        android:enabled="true" />
+
+    <Button
+        android:id="@+id/file_pho_left"
+        android:layout_width="98px"
+        android:layout_height="98px"
+        android:layout_marginLeft="525px"
+        android:layout_marginTop="598px"
+        android:background="@drawable/file_pho_left"
+        android:enabled="true" />
+
+    <Button
+        android:id="@+id/file_pho_right"
+        android:layout_width="98px"
+        android:layout_height="98px"
+        android:layout_marginLeft="758px"
+        android:layout_marginTop="598px"
+        android:background="@drawable/file_pho_right"
+        android:enabled="true" />
+
+    <Button
+        android:id="@+id/file_pho_del"
+        android:layout_width="98px"
+        android:layout_height="98px"
+        android:layout_marginLeft="899px"
+        android:layout_marginTop="598px"
+        android:background="@drawable/file_pho_del"
+        android:enabled="true" />
+
+    <Button
+        android:id="@+id/file_pho_share"
+        android:layout_width="98px"
+        android:layout_height="98px"
+        android:layout_marginLeft="1040px"
+        android:layout_marginTop="598px"
+        android:background="@drawable/file_pho_share"
+        android:enabled="false" />
+</RelativeLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/file_rv01"
+        android:layout_width="788px"
+        android:layout_height="348px"
+        android:layout_marginLeft="26px"
+        android:layout_marginTop="59px" />
+
+    <TextView
+        android:id="@+id/file_sum_info_tv"
+        android:layout_width="748px"
+        android:layout_height="24px"
+        android:layout_marginLeft="26px"
+        android:layout_marginTop="417px"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="22px" />
+
+    <Button
+        android:id="@+id/file_up"
+        android:layout_width="97px"
+        android:layout_height="98px"
+        android:layout_marginLeft="819px"
+        android:layout_marginTop="24px"
+        android:enabled="false"
+        android:background="@drawable/file_up" />
+
+    <Button
+        android:id="@+id/file_down"
+        android:layout_width="97px"
+        android:layout_height="98px"
+        android:layout_marginLeft="819px"
+        android:layout_marginTop="320px"
+        android:enabled="false"
+        android:background="@drawable/file_down" />
+
+    <Button
+        android:id="@+id/file_bj"
+        android:layout_width="149px"
+        android:layout_height="58px"
+        android:layout_marginLeft="349px"
+        android:layout_marginTop="493px"
+        android:background="@drawable/file_bj" />
+
+    <Button
+        android:id="@+id/file_selectall"
+        android:layout_width="136px"
+        android:layout_height="98px"
+        android:layout_marginLeft="-17px"
+        android:layout_marginTop="478px"
+        android:background="@drawable/file_selectall" />
+
+    <Button
+        android:id="@+id/file_selectnone"
+        android:layout_width="176px"
+        android:layout_height="98px"
+        android:layout_marginLeft="213px"
+        android:layout_marginTop="478px"
+        android:background="@drawable/file_selectnone" />
+
+    <Button
+        android:id="@+id/file_cancle"
+        android:layout_width="148px"
+        android:layout_height="98px"
+        android:layout_marginLeft="447px"
+        android:layout_marginTop="478px"
+        android:background="@drawable/file_cancle" />
+
+    <Button
+        android:id="@+id/file_del"
+        android:layout_width="144px"
+        android:layout_height="98px"
+        android:layout_marginLeft="681px"
+        android:layout_marginTop="478px"
+        android:background="@drawable/file_del" />
+
+</RelativeLayout>

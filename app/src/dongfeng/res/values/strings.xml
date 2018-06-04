@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DVRExplorer</string>
+    <string name="test">測試</string>
+    <string name="view_photo">查看图像</string>
+    <string name="view_video">查看录像</string>
+    <string name="view_video_nor">查看录像-普通录像</string>
+    <string name="view_video_evt">查看录像-紧急录像</string>
+    <string name="view_video_loc">查看录像-下載录像</string>
+    <string name="run_photo">執行一次照片拍攝</string>
+    <string name="fast_emerge">執行一次紧急录像</string>
+    <string name="action_settings">设置</string>
+    <string name="empty"></string>
+    <string name="filename">文件名</string>
+    <string name="videoname">视频名称</string>
+    <string name="openfile">打开文件</string>
+    <string name="opendir">打开文件夹</string>
+    <string name="select">选集</string>
+    <string name="nor_video">普通录像</string>
+    <string name="evt_video">紧急录像</string>
+    <string name="loc_video">下載录像</string>
+</resources>

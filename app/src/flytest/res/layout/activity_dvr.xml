@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <LinearLayout
+        android:id="@+id/ac_main_ll01"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:onClick="onExit"
+            android:layout_width="120px"
+            android:layout_height="match_parent"
+            android:text="退出"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:onClick="onTest"
+            android:layout_width="120px"
+            android:layout_height="match_parent"
+            android:text="测试"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:onClick="onPhoto"
+            android:layout_width="120px"
+            android:layout_height="match_parent"
+            android:text="拍照"
+            tools:ignore="OnClick" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ac_main_ll02"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/ac_main_ll01"
+        android:background="#00FF00"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@+id/ac_main_ll03"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ac_main_ll02"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="248px"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/ac_dvr_bt01"
+                android:onClick="onRtspView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="60px"
+                android:background="@drawable/bt"
+                android:layout_weight="1"
+                android:text="DVR"
+                android:textSize="48px"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/ac_dvr_bt02"
+                android:onClick="onBrowseVideo"
+                android:layout_width="match_parent"
+                android:background="@drawable/bt"
+                android:layout_height="0dp"
+                android:layout_margin="60px"
+                android:layout_weight="1"
+                android:textSize="48px"
+                android:text="录像"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/ac_dvr_bt03"
+                android:onClick="onBrowsePhoto"
+                android:layout_width="match_parent"
+                android:background="@drawable/bt"
+                android:layout_height="0dp"
+                android:layout_margin="60px"
+                android:layout_weight="1"
+                android:textSize="48px"
+                android:text="图片"
+                tools:ignore="OnClick" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#00FF00" />
+
+        <FrameLayout
+            android:id="@+id/dvr_fm_fl01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20px">
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

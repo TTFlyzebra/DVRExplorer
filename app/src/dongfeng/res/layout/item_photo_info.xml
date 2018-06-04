@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <ImageView
+        android:id="@+id/item_photo_iv"
+        android:layout_width="240px"
+        android:layout_height="134px"
+        android:scaleType="fitXY"
+        android:src="@drawable/load_photo" />
+
+    <TextView
+        android:id="@+id/item_photo_tv"
+        android:layout_width="240px"
+        android:layout_height="40px"
+        android:layout_marginTop="134px"
+        android:textSize="22px"
+        android:text="2018-02-01 18:00:00"
+        android:gravity="center"
+        android:textColor="#FFF" />
+    <CheckBox
+        android:id="@+id/item_photo_ck"
+        android:layout_width="40px"
+        android:layout_height="40px"
+        android:layout_marginTop="0px"
+        android:layout_marginLeft="200px"/>
+</RelativeLayout>

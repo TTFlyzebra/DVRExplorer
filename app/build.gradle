@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.longhorn.dvrexplorer"
+        minSdkVersion 16
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'longhorn'
+            keyPassword 'longhorn'
+            storeFile file('./sign/longhorn.jks')
+            storePassword 'longhorn'
+        }
+        debug{
+            keyAlias 'longhorn'
+            keyPassword 'longhorn'
+            storeFile file('./sign/longhorn.jks')
+            storePassword 'longhorn'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        dongfeng {
+        }
+    }
+    productFlavors {
+        dongfeng {
+            versionName "1.0"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(path: ':live555')
+    implementation project(path: ':flydown')
+    implementation project(path: ':giraffeplayer')
+    implementation project(path: ':ijkplayer-java')
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    //    implementation 'com.github.wseemann:FFmpegMediaMetadataRetriever-armeabi-v7a:1.0.14'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.bm.photoview:library:1.4.1'
+    //    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8'
+}
