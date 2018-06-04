@@ -7,7 +7,7 @@ package com.longhorn.dvrexplorer.data;
  */
 
 public class Global {
-    public static String DVR_IP = "192.168.173.88";
+    public static String DVR_IP = "192.168.173.101";
     public static int WEB_PORT = 8080;
     public static int CMD_PORT = 7878;
 //    public static String DVR_RTSP = "rtsp://"+DVR_IP+"/live";

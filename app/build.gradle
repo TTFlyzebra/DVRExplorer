@@ -11,7 +11,6 @@ android {
         multiDexEnabled true
         flavorDimensions "versionCode"
     }
-
     signingConfigs {
         release {
             keyAlias 'longhorn'
@@ -19,14 +18,13 @@ android {
             storeFile file('./sign/longhorn.jks')
             storePassword 'longhorn'
         }
-        debug{
+        debug {
             keyAlias 'longhorn'
             keyPassword 'longhorn'
             storeFile file('./sign/longhorn.jks')
             storePassword 'longhorn'
         }
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -34,7 +32,6 @@ android {
             signingConfig signingConfigs.release
         }
     }
-
     sourceSets {
         dongfeng {
         }
@@ -44,6 +41,7 @@ android {
             versionName "1.0"
         }
     }
+    buildToolsVersion '26.0.3'
 }
 
 dependencies {

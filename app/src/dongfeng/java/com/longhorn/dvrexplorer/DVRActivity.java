@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hsae.autosdk.dvr.IDvrStateNotify;
-import com.longhorn.dvrexplorer.R;
 import com.longhorn.dvrexplorer.data.Global;
 import com.longhorn.dvrexplorer.utils.FlyLog;
 
@@ -26,6 +25,7 @@ import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -114,7 +114,9 @@ public class DVRActivity extends Activity {
             }
         });
 
-        getRtspIP();
+//        addFragment("RtspFragment");
+
+        setDvrRtspIPTask();
     }
 
     private void initService() {
@@ -163,7 +165,7 @@ public class DVRActivity extends Activity {
         super.onDestroy();
     }
 
-    public void getRtspIP() {
+    public void setDvrRtspIPTask() {
         executor.execute(new Runnable() {
             @Override
             public void run() {
@@ -171,22 +173,25 @@ public class DVRActivity extends Activity {
                 InputStream ins = null;
                 ServerSocket serverSocket = null;
                 try {
+                    FlyLog.d("create socket server prot 50003");
                     serverSocket = new ServerSocket(50003);
+                    FlyLog.d("socket accept");
                     socket = serverSocket.accept();
                     socket.setSoTimeout(5000);
+                    FlyLog.d("socket read");
                     ins = socket.getInputStream();
                     byte buf[] = new byte[1024];
                     int len = ins.read(buf);
-                    for(int i=0;i<len;i++){
-                        if(buf[i]==0x00){
+                    for (int i = 0; i < len; i++) {
+                        if (buf[i] == 0x00) {
                             len = i;
                             break;
                         }
                     }
                     byte recv[] = new byte[len];
                     System.arraycopy(buf, 0, recv, 0, len);
-                    Global.DVR_IP= new String(recv, "utf-8");
-                    FlyLog.d("recv string:%s",  Global.DVR_IP);
+                    Global.DVR_IP = new String(recv, "utf-8");
+                    FlyLog.d("recv string:%s", Global.DVR_IP);
                     StringBuilder sb = new StringBuilder("");
                     for (byte aByte : recv) {
                         String hv = Integer.toHexString(aByte & 0xFF);
@@ -200,9 +205,12 @@ public class DVRActivity extends Activity {
                         sb.deleteCharAt(sb.length() - 1);
                     }
                     FlyLog.d("recv bytes:%s", sb.toString());
-                } catch (IOException e) {
+                }catch (SocketTimeoutException e){
                     e.printStackTrace();
-                    FlyLog.d(e.toString());
+                    FlyLog.e(e.toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    FlyLog.e(e.toString());
                 } finally {
                     try {
                         if (ins != null) ins.close();
