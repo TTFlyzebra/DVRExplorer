@@ -121,7 +121,6 @@ public class FileAdapater extends RecyclerView.Adapter<FileAdapater.ViewHolder> 
         FlyLog.d("loadImageView %d-%d", first, last);
         try {
             if (mList == null || first < 0 || first >= mList.size() || last < 0 || last >= mList.size()) {
-                FlyLog.e("mList==null||first<=0||first>=mList.size()||last<=0||last>=mList.size() first=%d,last=%d",first,last);
                 return;
             }
             if (mList.get(first).type == 2) {

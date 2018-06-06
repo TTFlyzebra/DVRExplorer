@@ -159,7 +159,7 @@ void continueAfterDESCRIBE(RTSPClient *rtspClient, int resultCode, char *resultS
         StreamClientState &scs = ((ourRTSPClient *) rtspClient)->scs; // alias
         if (resultCode != 0) {
             eventLoopWatchVariable = 1;
-            sprintf(resultMsg, "Failed to get a SDP description:\n %s", resultString);
+            sprintf(resultMsg, "Failed to get a SDP description: %s", resultString);
             LOGE("%s", resultMsg);
             delete[] resultString;
             break;
@@ -340,6 +340,35 @@ void streamTimerHandler(void *clientData) {
     shutdownStream(rtspClient);
 }
 
+void shutdownStream1(RTSPClient *rtspClient, int exitCode) {
+    UsageEnvironment &env = rtspClient->envir(); // alias
+    StreamClientState &scs = ((ourRTSPClient *) rtspClient)->scs; // alias
+
+    if (scs.session != NULL) {
+        Boolean someSubsessionsWereActive = False;
+        MediaSubsessionIterator iter(*scs.session);
+        MediaSubsession *subsession;
+
+        while ((subsession = iter.next()) != NULL) {
+            if (subsession->sink != NULL) {
+                Medium::close(subsession->sink);
+                subsession->sink = NULL;
+
+                if (subsession->rtcpInstance() != NULL) {
+                    subsession->rtcpInstance()->setByeHandler(NULL,
+                                                              NULL); // in case the server sends a RTCP "BYE" while handling "TEARDOWN"
+                }
+
+                someSubsessionsWereActive = True;
+            }
+        }
+
+        if (someSubsessionsWereActive) {
+            rtspClient->sendTeardownCommand(*scs.session, NULL);
+        }
+    }
+}
+
 void shutdownStream(RTSPClient *rtspClient, int exitCode) {
     UsageEnvironment &env = rtspClient->envir(); // alias
     StreamClientState &scs = ((ourRTSPClient *) rtspClient)->scs; // alias
@@ -486,10 +515,11 @@ extern "C" JNIEXPORT void
 JNICALL
 Java_com_flyzebra_live555_rtsp_RtspClient_stop(JNIEnv *env, jobject thiz) {
     eventLoopWatchVariable = 1;
-//    if (myRtspClient != NULL && !firstFrame && isrtspconnected) {
-//        shutdownStream(myRtspClient, 0);
-//    }
+    if (myRtspClient != NULL && !firstFrame && isrtspconnected) {
+        shutdownStream1(myRtspClient, 0);
+    }
 //    pthread_create(&pidclose,NULL,closeThread,NULL);
+
 }
 
 /**

@@ -25,6 +25,7 @@
 
         <service
             android:name=".service.DvrStateNotifyService"
+            android:process=":remote"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.hsae.auto.DVR_SERVICE" />

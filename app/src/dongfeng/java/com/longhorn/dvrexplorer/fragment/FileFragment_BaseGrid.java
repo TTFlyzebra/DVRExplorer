@@ -216,7 +216,7 @@ public abstract class FileFragment_BaseGrid extends Fragment implements SocketRe
 
     @Override
     public void result(ResultData msg) {
-        FlyLog.d("length=%d,data=%s", msg.getMark(), ByteTools.bytes2HexString(msg.getBytes()));
+        FlyLog.d("length=%d,data=%s,msg=%s", msg.getMark(), ByteTools.bytes2HexString(msg.getBytes()),msg.getMsg());
         if (msg.getMark() > 0) {
             try {
                 mList.clear();

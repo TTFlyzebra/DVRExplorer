@@ -35,10 +35,8 @@ public class SocketTools {
         return SocketToolsHolder.sInstance;
     }
 
-    private static final Executor executor = Executors.newFixedThreadPool(1);
-
     public void sendCommand(final byte[] command, final SocketResult socketResult) {
-        executor.execute(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 Socket socket = null;
@@ -46,10 +44,11 @@ public class SocketTools {
                 DataInputStream dis = null;
                 try {
                     SocketAddress socAddress = new InetSocketAddress(Global.DVR_IP, Global.CMD_PORT);
-                    //设置3秒之后即认为是超时
+                    FlyLog.d("socket ip=%s,port=%d",Global.DVR_IP,Global.CMD_PORT);
+                    //设置10秒之后即认为是超时
                     socket = new Socket();
-                    socket.connect(socAddress, 10000);
-                    socket.setSoTimeout(10000);
+                    socket.connect(socAddress, 3000);
+                    socket.setSoTimeout(3000);
                     dos = new DataOutputStream(socket.getOutputStream());
 
                     CRC32 crc32 = new CRC32();
@@ -113,7 +112,7 @@ public class SocketTools {
                     }
                 }
             }
-        });
+        }).start();
     }
 
 }
