@@ -486,9 +486,9 @@ extern "C" JNIEXPORT void
 JNICALL
 Java_com_flyzebra_live555_rtsp_RtspClient_stop(JNIEnv *env, jobject thiz) {
     eventLoopWatchVariable = 1;
-    if (myRtspClient != NULL && !firstFrame && isrtspconnected) {
-        shutdownStream(myRtspClient, 0);
-    }
+//    if (myRtspClient != NULL && !firstFrame && isrtspconnected) {
+//        shutdownStream(myRtspClient, 0);
+//    }
 //    pthread_create(&pidclose,NULL,closeThread,NULL);
 }
 

@@ -1,6 +1,8 @@
 // IDvrStateNotify.aidl
 package com.hsae.autosdk.dvr;
 
+import com.hsae.autosdk.dvr.IDvrTyListener;
+import com.hsae.autosdk.dvr.IDvrHsListener;
 
 interface IDvrStateNotify {
     /** state
@@ -60,4 +62,44 @@ interface IDvrStateNotify {
         0x07 = write protection
     **/
     void notitySDCardStatus(int state);
+
+
+    /**
+     * 请求DA发送MAC地址和Wifi热点密码给DVR设备，执行连接wifi的操作
+    **/
+    void notihsConnectWifi();
+
+    /**
+     * DVR APP点击确认升级后通知DA，DA向DVR设备发送执行升级操作的命令
+     *   0x01 = update DSP software
+     *   0x02 = update MCU software
+     *   0x03 = update DSP and MCU
+    **/
+    void notihsUpdateEvent(int type);
+
+    /**
+     * 将获取的DVRIP地址转发给DA
+    **/
+    void notihsDvrIPAddress(String ipStr);
+
+    /**
+    * Dvr注册监听信息，接收自己所需的信息
+    **/
+    void registerDvrTyListener(IDvrTyListener listener);
+
+    /**
+    * Dvr注销监听信息
+    **/
+    void unregisterDvrTyListener(IDvrTyListener listener);
+
+    /**
+    * DA注册监听信息，接收自己所需的信息
+    **/
+    void registerDvrHsListener(IDvrHsListener listener);
+
+    /**
+    * DA注销监听信息
+    **/
+    void unregisterDvrHsListener(IDvrHsListener listener);
+
 }

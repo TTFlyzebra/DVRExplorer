@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hsae.autosdk.dvr.IDvrStateNotify;
+import com.hsae.autosdk.dvr.IDvrTyListener;
 import com.longhorn.dvrexplorer.data.Global;
 import com.longhorn.dvrexplorer.utils.FlyLog;
 
@@ -40,11 +41,45 @@ public class DVRActivity extends Activity {
     private static final Executor executor = Executors.newFixedThreadPool(1);
 
     private IDvrStateNotify iDvrStateNotify;
+
+    private IDvrTyListener iDvrTyListener = new IDvrTyListener.Stub() {
+        @Override
+        public void notityWorkStatus(int state) throws RemoteException {
+
+        }
+
+        @Override
+        public void notityLinkStatus(int state) throws RemoteException {
+
+        }
+
+        @Override
+        public void notityUpdateNotify(int state) throws RemoteException {
+
+        }
+
+        @Override
+        public void notityTakePhotoRespond(int state) throws RemoteException {
+
+        }
+
+        @Override
+        public void notityUpdateSchedule(int state) throws RemoteException {
+
+        }
+
+        @Override
+        public void notitySDCardStatus(int state) throws RemoteException {
+
+        }
+    };
+
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             iDvrStateNotify = IDvrStateNotify.Stub.asInterface(service);
             try {
+                iDvrStateNotify.registerDvrTyListener(iDvrTyListener);
                 iDvrStateNotify.notityLinkStatus(1);
                 iDvrStateNotify.notitySDCardStatus(2);
                 iDvrStateNotify.notityTakePhotoRespond(3);
