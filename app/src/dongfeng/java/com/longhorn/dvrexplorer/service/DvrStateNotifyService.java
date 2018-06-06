@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import com.hsae.autosdk.dvr.IDvrHsListener;
 import com.hsae.autosdk.dvr.IDvrStateNotify;
 import com.hsae.autosdk.dvr.IDvrTyListener;
+import com.longhorn.dvrexplorer.module.SoundPlay;
 import com.longhorn.dvrexplorer.utils.FlyLog;
 
 
@@ -20,8 +21,24 @@ import com.longhorn.dvrexplorer.utils.FlyLog;
 
 public class DvrStateNotifyService extends Service {
 
+    private SoundPlay soundPlay = null;
+
     private RemoteCallbackList<IDvrTyListener> iDvrTyListeners = new RemoteCallbackList<>();
     private RemoteCallbackList<IDvrHsListener> iDvrHsListeners = new RemoteCallbackList<>();
+
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        soundPlay = new SoundPlay(this);
+        soundPlay.initSoundPool();
+    }
+
+    @Override
+    public void onDestroy() {
+        soundPlay.stopSound();
+        super.onDestroy();
+    }
 
     private IBinder mBinder = new IDvrStateNotify.Stub() {
         @Override
@@ -61,10 +78,23 @@ public class DvrStateNotifyService extends Service {
         @Override
         public void notityUpdateNotify(int state) throws RemoteException {
             FlyLog.d("notityUpdateNotify state=%d",state);
+            final int N = iDvrTyListeners.beginBroadcast();
+            for (int i = 0; i < N; i++) {
+                IDvrTyListener l = iDvrTyListeners.getBroadcastItem(i);
+                if (l != null) {
+                    try {
+                        l.notityUpdateNotify(state);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            iDvrTyListeners.finishBroadcast();
         }
 
         @Override
         public void notityTakePhotoRespond(int state) throws RemoteException {
+            soundPlay.playSound(1,0);
             FlyLog.d("notityTakePhotoRespond state=%d",state);
             final int N = iDvrTyListeners.beginBroadcast();
             for (int i = 0; i < N; i++) {

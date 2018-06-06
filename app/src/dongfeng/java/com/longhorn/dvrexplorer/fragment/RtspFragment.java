@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.flyzebra.live555.rtsp.RtspVideoView;
+import com.longhorn.dvrexplorer.DVRActivity;
 import com.longhorn.dvrexplorer.R;
 import com.longhorn.dvrexplorer.data.Global;
 import com.longhorn.dvrexplorer.module.wifi.CommandType;
@@ -65,6 +67,11 @@ public class RtspFragment extends Fragment implements SocketResult{
         rtsp_pho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                try {
+                    ((DVRActivity)getActivity()).iDvrStateNotify.notityTakePhotoRespond(1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 v.setEnabled(false);
                 SocketTools.getInstance().sendCommand(CommandType.FAST_PHOTOGRAPHY, new SocketResult() {
                     @Override

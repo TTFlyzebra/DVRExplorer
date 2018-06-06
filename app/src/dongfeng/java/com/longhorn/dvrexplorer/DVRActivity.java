@@ -42,7 +42,7 @@ public class DVRActivity extends Activity {
     private Handler mHandler = new Handler(Looper.getMainLooper());
     private static final Executor executor = Executors.newFixedThreadPool(1);
 
-    private IDvrStateNotify iDvrStateNotify;
+    public IDvrStateNotify iDvrStateNotify;
 
     private IDvrTyListener iDvrTyListener = new IDvrTyListener.Stub() {
         @Override
