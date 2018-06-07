@@ -351,14 +351,6 @@ void shutdownStream1(RTSPClient *rtspClient, int exitCode) {
 
         while ((subsession = iter.next()) != NULL) {
             if (subsession->sink != NULL) {
-                Medium::close(subsession->sink);
-                subsession->sink = NULL;
-
-                if (subsession->rtcpInstance() != NULL) {
-                    subsession->rtcpInstance()->setByeHandler(NULL,
-                                                              NULL); // in case the server sends a RTCP "BYE" while handling "TEARDOWN"
-                }
-
                 someSubsessionsWereActive = True;
             }
         }

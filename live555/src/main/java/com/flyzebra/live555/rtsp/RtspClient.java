@@ -10,8 +10,6 @@ import java.util.concurrent.Executors;
  */
 public class RtspClient {
     private IRtspCallBack iRtspCallBack;
-    private static final Executor executor = Executors.newFixedThreadPool(1);
-
     static {
         System.loadLibrary("rtspclient");
     }

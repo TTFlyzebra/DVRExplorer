@@ -39,8 +39,6 @@ import java.util.concurrent.Executors;
 
 public class DVRActivity extends Activity {
     private Button bt_home, bt_record, bt_file, bt_set;
-    private Handler mHandler = new Handler(Looper.getMainLooper());
-    private static final Executor executor = Executors.newFixedThreadPool(1);
 
     public IDvrStateNotify iDvrStateNotify;
 
@@ -113,10 +111,8 @@ public class DVRActivity extends Activity {
         bt_file = findViewById(R.id.ac_dvr_bt_file);
 
         bt_record.setEnabled(false);
-        bt_set.setEnabled(false);
-        bt_file.setEnabled(false);
+        addFragment("RtspFragment");
 
-        bt_record.setEnabled(false);
         bt_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,10 +151,6 @@ public class DVRActivity extends Activity {
                 }
             }
         });
-
-//        addFragment("RtspFragment");
-
-        setDvrRtspIPTask();
     }
 
     private void initService() {
@@ -205,62 +197,5 @@ public class DVRActivity extends Activity {
             e.printStackTrace();
         }
         super.onDestroy();
-    }
-
-    public void setDvrRtspIPTask() {
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                DatagramSocket ds = null;
-                try {
-                    ds = new DatagramSocket(50003);  //定义服务，监视端口上面的发送端口，注意不是send本身端口
-                    byte[] buf = new byte[1024];//接受内容的大小，注意不要溢出
-                    DatagramPacket dp = new DatagramPacket(buf, 0, buf.length);//定义一个接收的包
-                    ds.receive(dp);//将接受内容封装到包中
-                    byte recv[] = dp.getData();
-                    int len = recv.length;
-                    for (int i = 0; i < recv.length; i++) {
-                        if (recv[i] == 0x00) {
-                            len = i;
-                            break;
-                        }
-                    }
-                    byte ipbytes[] = new byte[len];
-                    System.arraycopy(recv, 0, ipbytes, 0, len);
-                    Global.DVR_IP = new String(ipbytes, "utf-8");
-                    FlyLog.d("recv string:%s", Global.DVR_IP);
-                    StringBuilder sb = new StringBuilder("");
-                    for (byte aByte : ipbytes) {
-                        String hv = Integer.toHexString(aByte & 0xFF);
-                        if (hv.length() < 2) {
-                            sb.append(0);
-                        }
-                        sb.append(hv);
-                        sb.append(":");
-                    }
-                    if (sb.length() > 1) {
-                        sb.deleteCharAt(sb.length() - 1);
-                    }
-                    FlyLog.d("recv bytes:%s", sb.toString());
-                } catch (SocketTimeoutException e) {
-                    e.printStackTrace();
-                    FlyLog.e(e.toString());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    FlyLog.e(e.toString());
-                } finally {
-                    if (ds != null) ds.close();
-                }
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        addFragment("RtspFragment");
-                        bt_record.setEnabled(false);
-                        bt_set.setEnabled(true);
-                        bt_file.setEnabled(true);
-                    }
-                });
-            }
-        });
     }
 }

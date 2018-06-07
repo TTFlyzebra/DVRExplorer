@@ -19,6 +19,7 @@ public class RtspVideoView extends SurfaceView implements SurfaceHolder.Callback
     private RtspClient rtspClient;
     private MediaDecoder mediaDecoder;
     private boolean isPlaying = false;
+    private boolean isShow = false;
 
     public RtspVideoView(Context context) {
         this(context, null);
@@ -39,15 +40,18 @@ public class RtspVideoView extends SurfaceView implements SurfaceHolder.Callback
 
     public void setRtspUrl(String rtspUrl) {
         this.rtspUrl = rtspUrl;
+        if (isShow) {
+            if (isPlaying) {
+                stopPlay();
+            }
+            startPlay();
+        }
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
-        if (!TextUtils.isEmpty(rtspUrl)) {
-            rtspClient = new RtspClient(this);
-            rtspClient.connect(rtspUrl);
-            isPlaying = true;
-        }
+        isShow = true;
+        startPlay();
 
     }
 
@@ -57,7 +61,19 @@ public class RtspVideoView extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-        isPlaying = false;
+        isShow = false;
+        stopPlay();
+    }
+
+    private void startPlay() {
+        if (!TextUtils.isEmpty(rtspUrl)) {
+            rtspClient = new RtspClient(this);
+            rtspClient.connect(rtspUrl);
+            isPlaying = true;
+        }
+    }
+
+    private void stopPlay() {
         if (mediaDecoder != null) {
             mediaDecoder.stop();
             mediaDecoder = null;
@@ -66,6 +82,7 @@ public class RtspVideoView extends SurfaceView implements SurfaceHolder.Callback
             rtspClient.close();
             rtspClient = null;
         }
+        isPlaying = false;
     }
 
     @Override
@@ -75,7 +92,7 @@ public class RtspVideoView extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void onVideo(byte[] videoBytes) {
-        if (isPlaying) mediaDecoder.input(videoBytes);
+        if (isPlaying && mediaDecoder != null) mediaDecoder.input(videoBytes);
     }
 
     @Override
