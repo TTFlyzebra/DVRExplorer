@@ -1,14 +1,7 @@
 package com.longhorn.dvrexplorer.utils;
 
-import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.media.MediaMetadataRetriever;
-import android.media.ThumbnailUtils;
-import android.os.Build;
-import android.provider.MediaStore;
-
-import java.util.HashMap;
 
 /**
  * Created by FlyZebra on 2017/1/30.

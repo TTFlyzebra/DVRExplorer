@@ -10,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.longhorn.dvrexplorer.R;
+import com.longhorn.dvrexplorer.adapter.VideoAdapater;
 import com.longhorn.dvrexplorer.data.Global;
 import com.longhorn.dvrexplorer.http.FlyOkHttp;
 import com.longhorn.dvrexplorer.http.IHttp;
-import com.longhorn.dvrexplorer.adapter.VideoAdapater;
 
 import java.util.ArrayList;
 import java.util.Collections;

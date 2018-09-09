@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <tcking.github.com.giraffeplayer.IjkVideoView
+        android:id="@+id/file_video_vv"
+        android:layout_width="1290px"
+        android:layout_height="724px"
+        android:layout_marginLeft="9px"
+        android:layout_marginTop="48px" />
+    <LinearLayout
+        android:layout_width="1290px"
+        android:layout_height="724px"
+        android:layout_marginLeft="9px"
+        android:layout_marginTop="48px"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fragment_video_tv07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:textSize="36px"
+            android:drawableBottom="@drawable/icon_forward"
+            android:gravity="center"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="1290px"
+        android:layout_height="724px"
+        android:layout_marginLeft="9px"
+        android:layout_marginTop="48px"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fragment_video_tv08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:textSize="36px"
+            android:drawableBottom="@drawable/icon_backward"
+            android:gravity="center"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/file_video_sk"
+        android:layout_width="717px"
+        android:layout_height="15px"
+        android:layout_marginLeft="295px"
+        android:layout_marginTop="684px"
+        android:thumb="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/file_video_sktv1"
+        android:layout_width="120px"
+        android:layout_height="36px"
+        android:layout_marginLeft="168px"
+        android:layout_marginTop="666px"
+        android:gravity="right"
+        android:textColor="#FFF"
+        android:textSize="33px" />
+
+    <TextView
+        android:id="@+id/file_video_sktv2"
+        android:layout_width="120px"
+        android:layout_height="36px"
+        android:layout_marginLeft="1020px"
+        android:layout_marginTop="666px"
+        android:gravity="left"
+        android:textColor="#FFF"
+        android:textSize="33px" />
+
+    <ImageView
+        android:id="@+id/file_video_iv"
+        android:layout_width="1290px"
+        android:layout_height="724px"
+        android:layout_marginLeft="9px"
+        android:layout_marginTop="48px" />
+
+    <Button
+        android:id="@+id/file_pho_return"
+        android:layout_width="147px"
+        android:layout_height="147px"
+        android:layout_marginLeft="45px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/file_pho_return"
+        android:enabled="true" />
+
+    <Button
+        android:id="@+id/file_video_left"
+        android:layout_width="147px"
+        android:layout_height="147px"
+        android:layout_marginLeft="397px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/file_video_left"
+        android:enabled="true" />
+
+    <Button
+        android:id="@+id/file_video_play"
+        android:layout_width="147px"
+        android:layout_height="147px"
+        android:layout_marginLeft="603px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/file_video_play"
+        android:enabled="true" />
+
+    <Button
+        android:id="@+id/file_video_right"
+        android:layout_width="147px"
+        android:layout_height="147px"
+        android:layout_marginLeft="807px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/file_video_right"
+        android:enabled="true" />
+</RelativeLayout>

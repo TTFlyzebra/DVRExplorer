@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <com.flyzebra.live555.rtsp.RtspVideoView
+        android:id="@+id/fm_rtspview_01"
+        android:layout_width="1183px"
+        android:layout_height="663px"
+        android:layout_marginLeft="258px"
+        android:layout_marginTop="40px"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/rtsp_tvinfo"
+        android:layout_width="1183px"
+        android:layout_height="663px"
+        android:layout_marginLeft="258px"
+        android:textSize="30px"
+        android:textColor="#AFFFFFFF"
+        android:gravity="left|top"
+        android:padding="15px"
+        android:layout_marginTop="40px"/>
+
+    <Button
+        android:id="@+id/rtsp_evt"
+        android:layout_width="153px"
+        android:layout_height="61px"
+        android:layout_marginLeft="270px"
+        android:layout_marginTop="765px"
+        android:textColor="@drawable/evt_textcolor"
+        android:textSize="30px"
+        android:text="@string/evt_button1"
+        android:background="@drawable/ac_dvr_evt1"
+        android:scaleType="fitXY" />
+
+    <Button
+        android:id="@+id/rtsp_pho"
+        android:layout_width="144px"
+        android:layout_height="144px"
+        android:layout_marginLeft="784px"
+        android:layout_marginTop="712px"
+        android:background="@drawable/ac_dvr_photo"
+        android:scaleType="fitCenter" />
+
+    <RelativeLayout
+        android:layout_width="1183px"
+        android:layout_height="663px"
+        android:layout_marginLeft="258px"
+        android:layout_marginTop="40px"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/rtsp_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>

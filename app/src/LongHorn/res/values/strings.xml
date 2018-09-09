@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">DVRExplorer</string>
+    <string name="test">測試</string>
+    <string name="view_photo">查看图像</string>
+    <string name="view_video">查看录像</string>
+    <string name="view_video_nor">查看录像-普通录像</string>
+    <string name="view_video_evt">查看录像-紧急录像</string>
+    <string name="view_video_loc">查看录像-下載录像</string>
+    <string name="run_photo">執行一次照片拍攝</string>
+    <string name="fast_emerge">執行一次紧急录像</string>
+    <string name="action_settings">设置</string>
+    <string name="empty"></string>
+    <string name="filename">文件名</string>
+    <string name="videoname">视频名称</string>
+    <string name="openfile">打开文件</string>
+    <string name="opendir">打开文件夹</string>
+    <string name="select">选集</string>
+    <string name="nor_video">普通录像</string>
+    <string name="evt_video">紧急录像</string>
+    <string name="loc_video">下載录像</string>
+
+    <string name="evt_button1">紧急录制</string>
+    <string name="evt_button2">正在录制</string>
+
+    <string name="alert1">警告提示!</string>
+    <string name="format_alert">格式化后所有内容将清空，确定要格式化吗？</string>
+    <string name="factoy_alert">恢复出厂设置后所有内容将清空，确定要继续吗？</string>
+    <string name="confirm">确定</string>
+    <string name="cancle">取消</string>
+    <string name="retry">重试</string>
+    <string name="formatting">正在格式化SDCARD……</string>
+    <string name="file_del_dialog_singimg">确定要删除该图片？</string>
+    <string name="file_del_dialog">确定要删除选中的%d个文件？</string>
+    <string name="file_del_running">正在删除选中文件……</string>
+    <string name="retry_pho_dialog">执行拍照操作失败！%sultCode:%d</string>
+    <string name="show_pho_fail_dialog">显示照片失败！</string>
+</resources>

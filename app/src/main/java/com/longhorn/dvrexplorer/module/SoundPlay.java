@@ -5,7 +5,6 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.support.annotation.RawRes;
 
-
 import com.longhorn.dvrexplorer.R;
 
 import java.util.HashMap;

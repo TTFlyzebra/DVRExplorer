@@ -109,6 +109,14 @@ public class ByteTools {
         return value;
     }
 
+
+    public static short bytes2Short(byte[] src, int offset) {
+        short value;
+        value = (short) ((src[offset] & 0xFF)
+                | ((src[offset + 1] & 0xFF) << 8));
+        return value;
+    }
+
     /**
      * byte数组中取int数值，本方法适用于(低位在后，高位在前)的顺序。和intToBytes2（）配套使用
      */
@@ -121,11 +129,41 @@ public class ByteTools {
         return value;
     }
 
+    public static short bytes2Short2(byte[] src, int offset) {
+        short value;
+        value = (short) (((src[offset] & 0xFF) << 24)
+                | (src[offset + 1] & 0xFF));
+        return value;
+    }
+
     public static boolean bytecmp(byte[] b1, byte[] b2) {
         for (int i = 0; i < b1.length; i++) {
             if (b1[i] != b2[i + 2]) return false;
         }
         return true;
+    }
+
+    /**
+     * 将int数值转换为占四个字节的byte数组，本方法适用于(低位在前，高位在后)的顺序。 和bytesToInt（）配套使用
+     *
+     * @param value 要转换的int值
+     * @return byte数组
+     */
+    public static byte[] shortToBytes(int value) {
+        byte[] src = new byte[2];
+        src[1] = (byte) ((value >> 8) & 0xFF);
+        src[0] = (byte) (value & 0xFF);
+        return src;
+    }
+
+    /**
+     * 将int数值转换为占四个字节的byte数组，本方法适用于(高位在前，低位在后)的顺序。  和bytesToInt2（）配套使用
+     */
+    public static byte[] shortToBytes2(int value) {
+        byte[] src = new byte[2];
+        src[0] = (byte) ((value >> 8) & 0xFF);
+        src[1] = (byte) (value & 0xFF);
+        return src;
     }
 
     public static int bytes2ShortInt(byte[] src, int offset) {

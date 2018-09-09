@@ -5,7 +5,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 
-
 import com.longhorn.dvrexplorer.utils.FlyLog;
 
 import java.io.File;

@@ -4,7 +4,6 @@ import com.longhorn.dvrexplorer.data.DvrFile;
 import com.longhorn.dvrexplorer.utils.ByteTools;
 import com.longhorn.dvrexplorer.utils.FlyLog;
 
-import java.nio.channels.FileLock;
 import java.util.List;
 
 /**

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <FrameLayout
+        android:id="@+id/file_fm01"
+        android:layout_width="1470px"
+        android:layout_height="990px"
+        android:layout_marginLeft="231px"
+        android:layout_marginTop="21px" />
+
+    <Button
+        android:id="@+id/file_image"
+        android:layout_width="255px"
+        android:layout_height="138px"
+        android:layout_marginLeft="3px"
+        android:layout_marginTop="69px"
+        android:background="@drawable/file_image" />
+
+    <Button
+        android:id="@+id/file_video"
+        android:layout_width="255px"
+        android:layout_height="138px"
+        android:layout_marginLeft="3px"
+        android:layout_marginTop="297px"
+        android:background="@drawable/file_video" />
+
+    <Button
+        android:id="@+id/file_evt"
+        android:layout_width="255px"
+        android:layout_height="138px"
+        android:layout_marginLeft="3px"
+        android:layout_marginTop="523px"
+        android:background="@drawable/file_evt" />
+
+</RelativeLayout>

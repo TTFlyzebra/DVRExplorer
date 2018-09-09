@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <com.flyzebra.live555.rtsp.RtspVideoView
+        android:id="@+id/fm_rtspview_01"
+        android:layout_width="1290px"
+        android:layout_height="724px"
+        android:layout_marginLeft="9px"
+        android:layout_marginTop="48px"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/rtsp_tvinfo"
+        android:layout_width="1290px"
+        android:layout_height="724px"
+        android:layout_marginLeft="9px"
+        android:layout_marginTop="48px"
+        android:gravity="left|top"
+        android:padding="15px"
+        android:textColor="#AFFFFFFF"
+        android:textSize="30px" />
+
+    <FrameLayout
+        android:id="@+id/rtsp_evt"
+        android:layout_width="270px"
+        android:layout_height="163px"
+        android:layout_marginLeft="129px"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="225px"
+            android:duplicateParentState="true"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_run_evt"
+            android:scaleType="fitXY"
+            android:textSize="30px" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:paddingLeft="75px"
+            android:text="紧急录像"
+            android:singleLine="true"
+            android:textColor="@drawable/hs_evt_textcolor"
+            android:textSize="42px" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/rtsp_pho"
+        android:layout_width="225px"
+        android:layout_height="163px"
+        android:layout_marginLeft="553px"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:duplicateParentState="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_run_pho"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:paddingLeft="90px"
+            android:textColor="@drawable/hs_evt_textcolor"
+            android:text="拍照"
+            android:textSize="42px" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/rtsp_sound"
+        android:layout_width="225px"
+        android:layout_height="163px"
+        android:layout_marginLeft="942px"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_sound"
+            android:duplicateParentState="true"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:paddingLeft="105px"
+            android:textColor="@drawable/textcolor"
+            android:text="声音"
+            android:textSize="42px" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="1290px"
+        android:layout_height="724px"
+        android:layout_marginLeft="9px"
+        android:layout_marginTop="48px"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/rtsp_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

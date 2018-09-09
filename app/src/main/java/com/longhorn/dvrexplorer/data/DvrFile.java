@@ -106,7 +106,7 @@ public class DvrFile implements Parcelable {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(path == 0 ? Global.getPathNor() : (path == 1 ? Global.getPathEvt() : Global.getPathPho()));
         stringBuilder.append(DateTools.date2String(date * 1000L, DateTools.DATE_FORMAT_FILENAME));
-        stringBuilder.append(suffix == 0 ? Global.DOWN_MP4 : ".JPG");
+        stringBuilder.append(suffix == 0 ?(Global.DVR_TYPE == DvrType.DVR_322  ?Global.DOWN_MP4_322:Global.DOWN_MP4_311): ".JPG");
         return stringBuilder.toString();
     }
 
@@ -118,7 +118,7 @@ public class DvrFile implements Parcelable {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(path == 0 ? Global.getPathNor() : (path == 1 ? Global.getPathEvt() : Global.getPathPho()));
         stringBuilder.append(DateTools.date2String(date * 1000L, DateTools.DATE_FORMAT_FILENAME));
-        stringBuilder.append(suffix == 0 ? Global.PLAY_MP4 : ".JPG");
+        stringBuilder.append(suffix == 0 ? (Global.DVR_TYPE == DvrType.DVR_322  ?Global.PLAY_MP4_322:Global.PLAY_MP4_311) : ".JPG");
         return stringBuilder.toString();
     }
 

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <Button
+        android:id="@+id/ac_dvr_bt_home"
+        android:layout_width="105px"
+        android:layout_height="101px"
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="0px"
+        android:scaleType="fitXY"
+        android:background="@drawable/ac_dvr_home" />
+
+    <Button
+        android:layout_width="105px"
+        android:layout_height="101px"
+        android:layout_marginLeft="114px"
+        android:layout_marginTop="0px"
+        android:scaleType="fitXY"
+        android:background="@drawable/ac_dvr_nav" />
+
+    <Button
+        android:layout_width="105px"
+        android:layout_height="101px"
+        android:layout_marginLeft="229px"
+        android:layout_marginTop="0px"
+        android:scaleType="fitXY"
+        android:background="@drawable/ac_dvr_dvr" />
+
+    <ImageView
+        android:id="@+id/test"
+        android:layout_width="36px"
+        android:layout_height="20px"
+        android:layout_marginLeft="1213px"
+        android:layout_marginTop="42px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ac_dvr_statu_dvr" />
+
+    <ImageView
+        android:layout_width="1248px"
+        android:layout_height="23px"
+        android:layout_marginLeft="1px"
+        android:layout_marginTop="81px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ac_dvr_line_02" />
+
+    <Button
+        android:id="@+id/ac_dvr_bt_record"
+        android:layout_width="137px"
+        android:layout_height="113px"
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="222px"
+        android:scaleType="fitXY"
+        android:background="@drawable/ac_dvr_record" />
+    <ImageView
+        android:layout_width="71px"
+        android:layout_height="2px"
+        android:layout_marginLeft="37px"
+        android:layout_marginTop="349px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ac_dvr_line_03" />
+
+    <Button
+        android:id="@+id/ac_dvr_bt_file"
+        android:layout_width="137px"
+        android:layout_height="113px"
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="352px"
+        android:scaleType="fitXY"
+        android:background="@drawable/ac_dvr_file" />
+    <ImageView
+        android:layout_width="71px"
+        android:layout_height="2px"
+        android:layout_marginLeft="37px"
+        android:layout_marginTop="477px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ac_dvr_line_03" />
+
+    <Button
+        android:id="@+id/ac_dvr_bt_set"
+        android:layout_width="137px"
+        android:layout_height="113px"
+        android:layout_marginLeft="0px"
+        android:layout_marginTop="481px"
+        android:scaleType="fitXY"
+        android:background="@drawable/ac_dvr_set" />
+
+    <ImageView
+        android:layout_width="2px"
+        android:layout_height="510px"
+        android:layout_marginLeft="142px"
+        android:layout_marginTop="133px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ac_dvr_line_01" />
+
+    <FrameLayout
+        android:id="@+id/ac_dvr_fm01"
+        android:layout_width="1132px"
+        android:layout_height="612px"
+        android:layout_marginLeft="146px"
+        android:layout_marginTop="106px"/>
+
+</RelativeLayout>

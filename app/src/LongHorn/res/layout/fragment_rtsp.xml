@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <com.flyzebra.live555.rtsp.RtspVideoView
+        android:id="@+id/fm_rtspview_01"
+        android:layout_width="789px"
+        android:layout_height="442px"
+        android:layout_marginLeft="172px"
+        android:layout_marginTop="27px"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/rtsp_tvinfo"
+        android:layout_width="789px"
+        android:layout_height="442px"
+        android:layout_marginLeft="172px"
+        android:textSize="20px"
+        android:textColor="#AFFFFFFF"
+        android:gravity="left|top"
+        android:padding="10px"
+        android:layout_marginTop="27px"/>
+
+    <Button
+        android:id="@+id/rtsp_evt"
+        android:layout_width="102px"
+        android:layout_height="41px"
+        android:layout_marginLeft="180px"
+        android:layout_marginTop="510px"
+        android:textColor="@drawable/evt_textcolor"
+        android:textSize="20px"
+        android:text="@string/evt_button1"
+        android:background="@drawable/ac_dvr_evt1"
+        android:scaleType="fitXY" />
+
+    <Button
+        android:id="@+id/rtsp_pho"
+        android:layout_width="96px"
+        android:layout_height="96px"
+        android:layout_marginLeft="523px"
+        android:layout_marginTop="475px"
+        android:background="@drawable/ac_dvr_photo"
+        android:scaleType="fitCenter" />
+
+    <RelativeLayout
+        android:layout_width="789px"
+        android:layout_height="442px"
+        android:layout_marginLeft="172px"
+        android:layout_marginTop="27px"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/rtsp_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>

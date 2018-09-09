@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/file_rv01"
+        android:layout_width="788px"
+        android:layout_height="366px"
+        android:layout_marginLeft="51px"
+        android:layout_marginTop="86px" />
+
+    <TextView
+        android:id="@+id/file_sum_info_tv"
+        android:layout_width="788px"
+        android:layout_height="24px"
+        android:layout_marginLeft="51px"
+        android:layout_marginTop="440px"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="22px" />
+
+    <Button
+        android:id="@+id/file_up"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:layout_marginLeft="904px"
+        android:layout_marginTop="58px"
+        android:enabled="false"
+        android:background="@drawable/ac_file_up" />
+
+    <Button
+        android:id="@+id/file_down"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:layout_marginLeft="904px"
+        android:layout_marginTop="423px"
+        android:enabled="false"
+        android:background="@drawable/ac_file_down" />
+
+    <Button
+        android:id="@+id/file_bj"
+        android:layout_width="144px"
+        android:layout_height="109px"
+        android:layout_marginLeft="369px"
+        android:paddingLeft="60px"
+        android:text="编辑"
+        android:textColor="@drawable/hs_evt_textcolor"
+        android:textSize="24px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ac_file_edit" />
+
+    <Button
+        android:id="@+id/file_selectall"
+        android:layout_width="170px"
+        android:layout_height="109px"
+        android:layout_marginLeft="-26px"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="60px"
+        android:text="全选"
+        android:textColor="@drawable/hs_evt_textcolor"
+        android:textSize="24px"
+        android:background="@drawable/ac_file_selectall" />
+
+    <Button
+        android:id="@+id/file_selectnone"
+        android:layout_width="170px"
+        android:layout_height="109px"
+        android:layout_marginLeft="222px"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="60px"
+        android:text="取消全选"
+        android:textColor="@drawable/hs_evt_textcolor"
+        android:textSize="24px"
+        android:background="@drawable/ac_file_cancleall" />
+
+    <Button
+        android:id="@+id/file_cancle"
+        android:layout_width="170px"
+        android:layout_height="109px"
+        android:layout_marginLeft="481px"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="60px"
+        android:text="退出编辑"
+        android:textColor="@drawable/hs_evt_textcolor"
+        android:textSize="24px"
+        android:background="@drawable/ac_file_return" />
+
+    <Button
+        android:id="@+id/file_del"
+        android:layout_width="170px"
+        android:layout_height="109px"
+        android:layout_marginLeft="732px"
+        android:paddingLeft="60px"
+        android:text="删除"
+        android:textColor="@drawable/hs_evt_textcolor"
+        android:textSize="24px"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ac_file_del" />
+
+    <RelativeLayout
+        android:layout_width="788px"
+        android:layout_height="366px"
+        android:layout_marginLeft="51px"
+        android:layout_marginTop="86px"
+        android:gravity="center" >
+        <ProgressBar
+            android:id="@+id/file_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</RelativeLayout>

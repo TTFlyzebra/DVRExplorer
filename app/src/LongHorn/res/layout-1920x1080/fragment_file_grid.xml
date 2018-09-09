@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/file_rv01"
+        android:layout_width="1182px"
+        android:layout_height="522px"
+        android:layout_marginLeft="39px"
+        android:layout_marginTop="88px" />
+
+    <TextView
+        android:id="@+id/file_sum_info_tv"
+        android:layout_width="1122px"
+        android:layout_height="36px"
+        android:layout_marginLeft="39px"
+        android:layout_marginTop="625px"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="33px" />
+
+    <Button
+        android:id="@+id/file_up"
+        android:layout_width="145px"
+        android:layout_height="147px"
+        android:layout_marginLeft="1228px"
+        android:layout_marginTop="36px"
+        android:enabled="false"
+        android:background="@drawable/file_up" />
+
+    <Button
+        android:id="@+id/file_down"
+        android:layout_width="145px"
+        android:layout_height="147px"
+        android:layout_marginLeft="1228px"
+        android:layout_marginTop="480px"
+        android:enabled="false"
+        android:background="@drawable/file_down" />
+
+    <Button
+        android:id="@+id/file_bj"
+        android:layout_width="223px"
+        android:layout_height="87px"
+        android:layout_marginLeft="523px"
+        android:layout_marginTop="739px"
+        android:background="@drawable/file_bj" />
+
+    <Button
+        android:id="@+id/file_selectall"
+        android:layout_width="204px"
+        android:layout_height="147px"
+        android:layout_marginLeft="-17px"
+        android:layout_marginTop="717px"
+        android:background="@drawable/file_selectall" />
+
+    <Button
+        android:id="@+id/file_selectnone"
+        android:layout_width="264px"
+        android:layout_height="147px"
+        android:layout_marginLeft="319px"
+        android:layout_marginTop="717px"
+        android:background="@drawable/file_selectnone" />
+
+    <Button
+        android:id="@+id/file_cancle"
+        android:layout_width="222px"
+        android:layout_height="147px"
+        android:layout_marginLeft="670px"
+        android:layout_marginTop="717px"
+        android:background="@drawable/file_cancle" />
+
+    <Button
+        android:id="@+id/file_del"
+        android:layout_width="216px"
+        android:layout_height="147px"
+        android:layout_marginLeft="1021px"
+        android:layout_marginTop="717px"
+        android:background="@drawable/file_del" />
+
+    <RelativeLayout
+        android:layout_width="1182px"
+        android:layout_height="522px"
+        android:layout_marginLeft="39px"
+        android:gravity="center"
+        android:layout_marginTop="88px" >
+        <ProgressBar
+            android:id="@+id/file_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</RelativeLayout>

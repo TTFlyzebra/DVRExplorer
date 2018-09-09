@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <RelativeLayout
+        android:id="@+id/set_rl_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="109px"
+            android:gravity="left|center"
+            android:layout_marginLeft="46px"
+            android:layout_marginTop="37px"
+            android:text="碰撞紧急录制"
+            android:textSize="42px" />
+
+        <Switch
+            android:id="@+id/set_sw_lmd"
+            android:layout_width="168px"
+            android:layout_height="109px"
+            android:layout_marginLeft="355px"
+            android:layout_marginTop="37px"
+            android:background="@drawable/set_sw"
+            android:textColor="#FFF"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@android:color/transparent"
+            android:track="@android:color/transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="109px"
+            android:layout_marginLeft="720px"
+            android:layout_marginTop="37px"
+            android:gravity="left|center"
+            android:text="停车监控"
+            android:textSize="42px" />
+
+        <Switch
+            android:id="@+id/set_sw_tcjk"
+            android:layout_width="168px"
+            android:layout_height="109px"
+            android:layout_marginLeft="927px"
+            android:layout_marginTop="37px"
+            android:background="@drawable/set_sw"
+            android:textColor="#FFF"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@android:color/transparent"
+            android:track="@android:color/transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="69px"
+            android:layout_marginLeft="46px"
+            android:layout_marginTop="204px"
+            android:gravity="left|center"
+            android:text="碰撞灵敏度"
+            android:textSize="42px" />
+
+        <RadioGroup
+            android:id="@+id/set_rg_lmd"
+            android:layout_width="wrap_content"
+            android:layout_height="69px"
+            android:layout_marginTop="204px"
+            android:checkedButton="@+id/set_lmd_low">
+
+            <RadioButton
+                android:id="@+id/set_lmd_low"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="387px"
+                android:layout_marginTop="0px"
+                android:button="@drawable/set_crd"
+                android:text="低"
+                android:textSize="33px" />
+
+            <RadioButton
+                android:id="@+id/set_lmd_medium"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="771px"
+                android:layout_marginTop="-69px"
+                android:button="@drawable/set_crd"
+                android:text="中"
+                android:textSize="33px" />
+
+            <RadioButton
+                android:id="@+id/set_lmd_high"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="1155px"
+                android:layout_marginTop="-69px"
+                android:button="@drawable/set_crd"
+                android:enabled="false"
+                android:text="高"
+                android:textSize="33px" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="69px"
+            android:gravity="left|center"
+            android:layout_marginLeft="46px"
+            android:layout_marginTop="354px"
+            android:text="录像时长设置"
+            android:textSize="42px" />
+
+        <RadioGroup
+            android:id="@+id/set_rg_time"
+            android:layout_width="wrap_content"
+            android:layout_height="69px"
+            android:layout_marginTop="354px"
+            android:checkedButton="@+id/set_time_5min">
+
+            <RadioButton
+                android:id="@+id/set_time_1min"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="387px"
+                android:layout_marginTop="0px"
+                android:button="@drawable/set_crd"
+                android:text="1分钟"
+                android:textSize="33px" />
+
+            <RadioButton
+                android:id="@+id/set_time_3min"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="771px"
+                android:layout_marginTop="-69px"
+                android:button="@drawable/set_crd"
+                android:text="3分钟"
+                android:textSize="33px" />
+
+            <RadioButton
+                android:id="@+id/set_time_5min"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="1155px"
+                android:layout_marginTop="-69px"
+                android:button="@drawable/set_crd"
+                android:text="5分钟"
+                android:textSize="33px" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="69px"
+            android:gravity="left|center"
+            android:layout_marginLeft="46px"
+            android:layout_marginTop="511px"
+            android:text="录制分辨率"
+            android:textSize="42px" />
+
+        <RadioGroup
+            android:id="@+id/set_rg_pix"
+            android:layout_width="wrap_content"
+            android:layout_height="69px"
+            android:layout_marginTop="511px"
+            android:checkedButton="@+id/set_pix_720">
+
+            <RadioButton
+                android:id="@+id/set_pix_720"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="387px"
+                android:layout_marginTop="0px"
+                android:button="@drawable/set_crd"
+                android:text="720P"
+                android:textSize="33px" />
+
+            <RadioButton
+                android:id="@+id/set_pix_1080"
+                android:layout_width="300px"
+                android:layout_height="69px"
+                android:layout_marginLeft="771px"
+                android:layout_marginTop="-69px"
+                android:button="@drawable/set_crd"
+                android:text="1080P"
+                android:textSize="33px" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="69px"
+            android:layout_marginLeft="46px"
+            android:gravity="left|center"
+            android:layout_marginTop="669px"
+            android:text="录制信息叠加"
+            android:textSize="42px" />
+
+        <CheckBox
+            android:id="@+id/set_info_time"
+            android:layout_width="300px"
+            android:layout_height="69px"
+            android:layout_marginLeft="387px"
+            android:layout_marginTop="669px"
+            android:button="@drawable/set_rrd"
+            android:text="时间"
+            android:textSize="33px" />
+
+        <CheckBox
+            android:id="@+id/set_info_car"
+            android:layout_width="300px"
+            android:layout_height="69px"
+            android:layout_marginLeft="771px"
+            android:layout_marginTop="669px"
+            android:button="@drawable/set_rrd"
+            android:text="车辆信息"
+            android:textSize="33px" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/set_rl_system"
+        android:layout_width="match_parent"
+        android:layout_height="1935px"
+        android:visibility="gone">
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="72px"
+            android:layout_marginTop="142px"
+            android:text="录像功能"
+            android:textSize="33px" />
+
+        <Switch
+            android:visibility="gone"
+            android:id="@+id/set_sw_record"
+            android:layout_width="168px"
+            android:layout_height="109px"
+            android:layout_marginLeft="210px"
+            android:layout_marginTop="108px"
+            android:background="@drawable/set_sw"
+            android:textColor="#FFF"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@android:color/transparent"
+            android:track="@android:color/transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="555px"
+            android:layout_marginTop="142px"
+            android:visibility="gone"
+            android:text="录音功能"
+            android:textSize="33px" />
+
+        <Switch
+            android:id="@+id/set_sw_sound"
+            android:layout_width="168px"
+            android:layout_height="109px"
+            android:layout_marginLeft="696px"
+            android:layout_marginTop="108px"
+            android:visibility="gone"
+            android:background="@drawable/set_sw"
+            android:textColor="#FFF"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@android:color/transparent"
+            android:track="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/set_factory"
+            android:layout_width="285px"
+            android:layout_height="150px"
+            android:layout_marginLeft="286px"
+            android:layout_marginTop="213px"
+            android:background="@drawable/set_button"
+            android:gravity="center"
+            android:text="恢复出厂值"
+            android:textColor="#FFF"
+            android:textSize="45px" />
+
+        <Button
+            android:id="@+id/set_format"
+            android:layout_width="285px"
+            android:layout_height="150px"
+            android:layout_marginLeft="793px"
+            android:layout_marginTop="213px"
+            android:background="@drawable/set_button"
+            android:gravity="center"
+            android:text="格式化"
+            android:textColor="#FFF"
+            android:textSize="45px" />
+
+        <TextView
+            android:id="@+id/set_tv_version"
+            android:layout_width="1380px"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="0px"
+            android:layout_marginTop="538px"
+            android:textColor="#FFF"
+            android:text="软件版本：V1.0.0"
+            android:textSize="54px" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/set_video_set"
+        android:layout_width="match_parent"
+        android:layout_height="163px"
+        android:gravity="left|center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="343px"
+        android:text="录像设置"
+        android:textSize="48px"
+        android:textColor="@drawable/hs_textcolor"/>
+    <TextView
+        android:id="@+id/set_system_set"
+        android:layout_width="match_parent"
+        android:layout_height="163px"
+        android:gravity="left|center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="852px"
+        android:text="系统选项"
+        android:textSize="48px"
+        android:textColor="@drawable/hs_textcolor"/>
+</RelativeLayout>

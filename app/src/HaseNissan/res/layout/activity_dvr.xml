@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bj"
+    tools:context="com.longhorn.dvrexplorer.DVRActivity">
+
+    <FrameLayout
+        android:id="@+id/ac_dvr_hs_rtsp"
+        android:layout_width="212px"
+        android:layout_height="103px"
+        android:layout_marginLeft="34px"
+        android:layout_marginTop="0px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_rtsp"
+            android:duplicateParentState="true"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:paddingLeft="80px"
+            android:text="主界面"
+            android:textColor="@drawable/hs_textcolor"
+            android:textSize="28px" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/ac_dvr_hs_pho"
+        android:layout_width="212px"
+        android:layout_height="103px"
+        android:layout_marginLeft="34px"
+        android:layout_marginTop="103px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_pho"
+            android:duplicateParentState="true"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:textColor="@drawable/hs_textcolor"
+            android:paddingLeft="80px"
+            android:text="照片回忆"
+            android:textSize="28px" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/ac_dvr_hs_nor"
+        android:layout_width="212px"
+        android:layout_height="103px"
+        android:layout_marginLeft="34px"
+        android:layout_marginTop="206px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_nor"
+            android:duplicateParentState="true"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:paddingLeft="80px"
+            android:textColor="@drawable/hs_textcolor"
+            android:text="一般视频"
+            android:textSize="28px" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/ac_dvr_hs_evt"
+        android:layout_width="212px"
+        android:layout_height="103px"
+        android:layout_marginLeft="34px"
+        android:layout_marginTop="309px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_evt"
+            android:duplicateParentState="true"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:paddingLeft="80px"
+            android:textColor="@drawable/hs_textcolor"
+            android:text="紧急视频"
+            android:textSize="28px" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/ac_dvr_hs_set"
+        android:layout_width="212px"
+        android:layout_height="103px"
+        android:layout_marginLeft="34px"
+        android:layout_marginTop="412px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ac_dvr_hs_set"
+            android:duplicateParentState="true"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:duplicateParentState="true"
+            android:gravity="left|center"
+            android:paddingLeft="80px"
+            android:textColor="@drawable/hs_textcolor"
+            android:text="设置"
+            android:textSize="28px" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/ac_dvr_fm01"
+        android:layout_width="1020px"
+        android:layout_height="720px"
+        android:layout_marginLeft="260px"
+        android:layout_marginTop="0px" />
+
+
+    <Button
+        android:id="@+id/ac_dvr_hs_home"
+        android:layout_width="234px"
+        android:layout_height="109px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ac_dvr_hs_home"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:layout_width="2px"
+        android:layout_height="510px"
+        android:layout_marginLeft="247px"
+        android:layout_marginTop="21px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ac_dvr_hs_fgx_01"/>
+
+</RelativeLayout>

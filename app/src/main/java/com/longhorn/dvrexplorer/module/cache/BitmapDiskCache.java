@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-
 import com.longhorn.dvrexplorer.utils.EncodeHelper;
 import com.longhorn.dvrexplorer.utils.FlyLog;
 

@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 import java.util.zip.CRC32;
 
 /**
@@ -26,6 +24,7 @@ import java.util.zip.CRC32;
 public class SocketTools {
     private Handler mHandler = new Handler(Looper.getMainLooper());
     private byte[] recvBfu = new byte[1024 * 1024];
+    private static final int TIME_OUT = 10000;
 
     private static class SocketToolsHolder {
         public static final SocketTools sInstance = new SocketTools();
@@ -47,8 +46,8 @@ public class SocketTools {
                     FlyLog.d("socket ip=%s,port=%d",Global.DVR_IP,Global.CMD_PORT);
                     //设置10秒之后即认为是超时
                     socket = new Socket();
-                    socket.connect(socAddress, 3000);
-                    socket.setSoTimeout(3000);
+                    socket.connect(socAddress, TIME_OUT);
+                    socket.setSoTimeout(TIME_OUT);
                     dos = new DataOutputStream(socket.getOutputStream());
 
                     CRC32 crc32 = new CRC32();
@@ -88,14 +87,13 @@ public class SocketTools {
                         }
                     });
                 } catch (final Exception e) {
-                    e.printStackTrace();
-                    FlyLog.e(e.toString());
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {
                             socketResult.result(new ResultData(-1, null, e.toString()));
                         }
                     });
+                    FlyLog.e(e.toString());
                 } finally {
                     try {
                         if (dis != null) {
